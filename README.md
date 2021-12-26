@@ -1,6 +1,6 @@
 # Demo
-## Scheduler.py: Parameter_Schedule
+- Scheduler.py: Parameter_Schedule
 
-## Visualize.py: 
 
---Line Chart
+- Visualize.py:  
+     -Line Chart
