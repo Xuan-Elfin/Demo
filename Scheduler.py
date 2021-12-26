@@ -4,8 +4,9 @@ import math
 # Schedulers for beta
 class Scheduler:
     def __call__(self, **kwargs):
-        raise NotImplemented()
+        raise NotImplemented(
 
+            
 
 class LinearScheduler(Scheduler):
     def __init__(self, start_value, end_value, n_iterations, start_iteration=0):
@@ -44,4 +45,4 @@ self.beta_scheduler = ExponentialScheduler(start_value=beta_start_value, end_val
                                                    n_iterations=beta_n_iterations, start_iteration=beta_start_iteration) 
 
 #! Update the value of beta according to the policy
-beta = self.beta_scheduler(self.iterations)
+beta = self.beta_scheduler(iterations)
