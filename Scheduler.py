@@ -37,9 +37,11 @@ class ExponentialScheduler(LinearScheduler):
         linear_value = super(ExponentialScheduler, self).__call__(iteration)
         return self.base ** linear_value
       
-      
-def __init__(self, beta_start_value=1e-3, beta_end_value=1,
-                 beta_n_iterations=100000, beta_start_iteration=50000, **params):
-         # Definition of the scheduler to update the value of the regularization coefficient beta over time
-        self.beta_scheduler = ExponentialScheduler(start_value=beta_start_value, end_value=beta_end_value,
+     
+# 调用方法如下：参考https://github.com/mfederici/Multi-View-Information-Bottleneck/    
+# Definition of the scheduler to update the value of the regularization coefficient beta over time
+self.beta_scheduler = ExponentialScheduler(start_value=beta_start_value, end_value=beta_end_value,
                                                    n_iterations=beta_n_iterations, start_iteration=beta_start_iteration) 
+
+#! Update the value of beta according to the policy
+beta = self.beta_scheduler(self.iterations)
